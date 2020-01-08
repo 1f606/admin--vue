@@ -6,6 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './assets/css/global.scss'
 //  导入字体图标
 import './assets/fonts/iconfont.css'
+import ZkTable from 'vue-table-with-tree-grid'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -21,6 +22,7 @@ Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+Vue.component('tree-table', ZkTable)
 
 new Vue({
   router,
