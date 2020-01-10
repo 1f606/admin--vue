@@ -2,11 +2,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/login/Login'
 import Welcome from '../views/home/components/Welcome'
-import Users from '../views/home/components/Users'
-import Rights from '../views/home/components/rights'
-import Roles from '../views/home/components/roles'
-import category from '../views/home/components/category'
-import params from '../views/home/components/params'
+const Users = () => import('../views/home/components/Users')
+const Rights = () => import('../views/home/components/rights')
+const Roles = () => import('../views/home/components/roles')
+const category = () => import('../views/goods/category')
+const params = () => import('../views/goods/params')
+const GoodsList = () => import('../views/goods/GoodsList')
+const AddPage = () => import('../views/goods/AddPage')
+const OrderList = () => import('../views/order/OrderList')
+const DataStatistics = () => import('../views/statistics/DataStatistics.vue')
 
 Vue.use(VueRouter)
 
@@ -49,6 +53,22 @@ const routes = [
       {
         path: '/params',
         component: params
+      },
+      {
+        path: '/goods',
+        component: GoodsList
+      },
+      {
+        path: '/goods/add',
+        component: AddPage
+      },
+      {
+        path: '/orders',
+        component: OrderList
+      },
+      {
+        path: '/reports',
+        component: DataStatistics
       }
     ]
   }
